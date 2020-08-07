@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.kanozo.mappers.UserMapper">
+	<insert id="insertUser">
+		INSERT 
+			INTO SPRING_USERS (USERID, NAME, PASSWORD, U_EXP, U_LEVEL, IMG) VALUES ( #{userid}, #{name}, #{password}, 0, 1, #{img})
+	</insert>
+	
+	<select id="selectUser" resultType="UserVO">
+		SELECT * 
+		FROM SPRING_USERS 
+			WHERE USERID = #{userid}
+	</select>
+	
+	<select id="loginUser" resultType="UserVO">
+		SELECT * 
+		FROM 
+			shop_users
+		WHERE 
+			userType = #{userType} AND userName = #{userName} AND PASSWORD = #{password}
+	</select>
+	
+	<insert id="levelData">
+		INSERT 
+			INTO SPRING_LEVEL(S_LEVEL, S_EXP) VALUES ( #{level}, #{exp} )
+	</insert>
+	
+	<delete id="clearData">
+		DELETE 
+		FROM 
+			SPRING_LEVEL
+	</delete>
+	
+	<select id="requireExp" resultType="Integer">
+		SELECT 
+			S_EXP FROM SPRING_LEVEL 
+		WHERE 
+			S_LEVEL = #{u_level}
+	</select>
+	
+	<update id="setLevelAndExp">
+		UPDATE 
+			SPRING_USERS SET U_LEVEL = #{u_level}, U_EXP = #{u_exp} 
+		WHERE 
+			USERID = #{userid}
+	</update>
+	
+	<select id="selectWriteCnt" resultType="UserVO">
+		SELECT COUNT(*) 
+			FROM SPRING_USERS A, SPRING_BOARDS B 
+		WHERE 
+			A.USERID = B.WRITER AND USERID = #{userid}
+	</select>
+</mapper>

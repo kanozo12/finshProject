@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: 서블릿 디스패쳐가 요청을 처리하는 구조속에서 필요한 빈을 선언하는 곳 -->
+
+	<!-- 스프링의 @Controller 를 비롯한 다양한 애노테이션이 동작할 수 있도록 Enable 해줌 -->
+	<annotation-driven />
+
+	<!-- 전역 익셉션 처리기 -->
+	<beans:bean
+		class="net.kanozo.exception.CommonExceptionHandler">
+	</beans:bean>
+	
+	<resources location="/resources/" mapping="/resources/**" />
+	<resources location="C:/upload" mapping="/upload/**" />
+	
+	<!-- Tiles -->
+	<beans:bean id="tielsViewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<beans:property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<beans:property name="order" value="1" />
+	</beans:bean>
+
+	<!-- Tiles 설정 파일 -->
+	<beans:bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:list>
+				<beans:value>/WEB-INF/tiles/tiles.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix"
+			value="/WEB-INF/template/" />
+		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="order" value="2" />
+	</beans:bean>
+
+	<!-- Controller, Repositorty, Service 등을 검색할 패키지 -->
+	<context:component-scan
+		base-package="net.kanozo.controller" />
+
+	<!-- 기본 라우터 활성화 -->
+	<default-servlet-handler />
+
+	<!-- 파일 업로드와 멀티파티 데이터 리졸버 빈 등록 -->
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760" />
+	</beans:bean>
+
+	<!-- 인터셉터 등록과 맵핑 -->
+	<beans:bean id="authInterceptor"
+		class="net.kanozo.interceptor.AuthInterceptor" />
+	<beans:bean id="nonAuthInterceptor"
+		class="net.kanozo.interceptor.NonAuthInterceptor" />
+
+	<interceptors>
+		<interceptor>
+			<mapping path="/user/register" />
+			<mapping path="/user/login" />
+			<beans:ref bean="nonAuthInterceptor" />
+		</interceptor>
+		<interceptor>
+
+			<mapping path="/user/logout" />
+			<mapping path="/user/profile" />
+			<mapping path="/board/write" />
+			<mapping path="/board/write/*" />
+			<mapping path="/board/write2" />
+			<mapping path="/board/write2/*" />
+			<mapping path="/board/write/notice" />
+			<mapping path="/board/write/notice/*" />
+			<mapping path="/board/delete/*" />
+			<mapping path="/board/noticeDelete/*" />
+			<mapping path="/user/info" />
+			<mapping path="/user/replyInsert" />
+			<mapping path="/com/*" />
+			<beans:ref bean="authInterceptor" />
+		</interceptor>
+	</interceptors>
+	
+
+
+</beans:beans>
