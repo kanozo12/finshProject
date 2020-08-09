@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
+   @import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +25,9 @@ a {
   color: #000000;
 }
 
+.mt-10 {
+    margin-top: 10px;
+}
 .head-nav {
   position: relative;
   height: 80px;
@@ -105,7 +108,7 @@ a {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   min-height: 1000px;
-  padding-top: 50px;
+  margin-top: 100px;
 }
 
 .item-boxs {

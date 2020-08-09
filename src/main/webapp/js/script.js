@@ -19,3 +19,12 @@ $(".owl-carousel").owlCarousel({
         }
     }
 });
+
+$('#joinTabToggle').click(function() {
+	 if($("#sign-in-menu").css("display") == "none"){
+		$('#sign-in-menu').css("display", "block");
+	 } else {
+		 $('#sign-in-menu').css("display", "none");
+	 }
+//	$('#sign-in-menu').css("display", "none");
+});
