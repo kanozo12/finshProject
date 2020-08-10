@@ -1,6 +1,7 @@
 package net.kanozo.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +9,7 @@ import net.kanozo.domain.ProductVO;
 
 @Repository
 public interface ProductDAO {
-	public ArrayList<ProductVO> allproductRetrieve();
+	public List<ProductVO> allproductRetrieve();
 
 	public ArrayList<ProductVO> productRetrieve(String productname);
 

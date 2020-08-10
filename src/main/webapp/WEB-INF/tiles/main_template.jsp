@@ -6,7 +6,10 @@
 <html lang="ko">
 
 <head>
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/header.css">
+	<link rel="stylesheet" href="/css/footer.css">
+	<link rel="stylesheet" href="/css/product.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
 	<link rel="stylesheet" href="/assets/owlcarousel/assets/owl.carousel.min.css" />
 

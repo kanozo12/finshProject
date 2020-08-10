@@ -1,11 +1,12 @@
 package net.kanozo.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.kanozo.domain.ProductVO;
 
 public interface ProductService {
-	public ArrayList<ProductVO> allproductRetrieve();
+	public List<ProductVO> allproductRetrieve();
 
 	public ArrayList<ProductVO> productRetrieve(String productname);
 

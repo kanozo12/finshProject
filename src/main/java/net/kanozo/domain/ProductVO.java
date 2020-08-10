@@ -7,6 +7,15 @@ public class ProductVO {
 	private String explanation;
 	private int price;
 	private int inventory;
+	private String productImgUrl;
+
+	public String getProductImgUrl() {
+		return productImgUrl;
+	}
+
+	public void setProductImgUrl(String productImgUrl) {
+		this.productImgUrl = productImgUrl;
+	}
 
 	public int getProductId() {
 		return productId;
@@ -73,8 +82,9 @@ public class ProductVO {
 
 	@Override
 	public String toString() {
-		return "Product [productId=" + productId + ", productType=" + productType + ", productName=" + productName
-				+ ", explanation=" + explanation + ", price=" + price + ", inventory=" + inventory + "]";
+		return "ProductVO [productId=" + productId + ", productType=" + productType + ", productName=" + productName
+				+ ", explanation=" + explanation + ", price=" + price + ", inventory=" + inventory + ", productImgUrl="
+				+ productImgUrl + "]";
 	}
 
 }

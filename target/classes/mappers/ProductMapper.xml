@@ -9,7 +9,7 @@
 	</select>
 	
 	<select id="productRetrieve" resultType="ProductVO">
-		SELECT * FROM product WHERE productName like '%" #{productname} "%'"
+		SELECT * FROM product WHERE productName like %#{productname}%"
 	</select>
 	
 	<select id="getProductId" resultType="Integer">

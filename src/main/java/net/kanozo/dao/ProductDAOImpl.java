@@ -1,6 +1,7 @@
 package net.kanozo.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class ProductDAOImpl implements ProductDAO {
 	private final String ns = "net.kanozo.mappers.ProductMapper";
 
 	@Override
-	public ArrayList<ProductVO> allproductRetrieve() {
-		return session.selectOne(ns + ".allproductRetrieve");
+	public List<ProductVO> allproductRetrieve() {
+		return session.selectList(ns + ".allproductRetrieve");
 	}
 
 	@Override
