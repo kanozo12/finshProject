@@ -32,28 +32,59 @@
 		</div>
 	</div>
 
-	<div id="sign-in-menu" class="visiable">
-		<h4>Sign In To Your Account</h4>
-		<form action="" class="sign-in-form">
-			<div class="join_form-group">
-				<input type="text" class="join_form-control">
-			</div>
-			<div class="join_form-group">
-				<input type="text" class="join_form-control">
-			</div>
-			<button class="sign-btn sign-btn">Sign In</button>
-			<a href="#" class="resetPaswordLink"> Forgot Your Password? </a> 
-			<span>Or Sign In With:</span>
-			<div class="join_sns">
-				<a href="#"></a>
-			</div>
+	<c:if test="${empty sessionScope.user}">
+		<div id="sign-in-menu" class="visiable">
+			<h4>Sign In To Your Account</h4>
+			<form action="/user/login" class="sign-in-form" method="post">
+				<input type="hidden" name="userType" value="C">
+				<div class="join_form-group">
+					<input type="text" class="join_form-control" name="userName">
+				</div>
+				<div class="join_form-group">
+					<input type="text" class="join_form-control" name="password">
+				</div>
+				<button class="sign-btn sign-btn">Sign In</button>
+				<a href="#" class="resetPaswordLink"> Forgot Your Password? </a> <span>Or
+					Sign In With:</span>
+				<div class="join_sns">
+					<a href="#"></a>
+				</div>
 
-			<p class="join_text">
-				Need an Account? <a href="/user/register" class="join_btn">Join Today!</a>
-			</p>
+				<p class="join_text">
+					Need an Account? <a href="/user/register" class="join_btn">Join
+						Today!</a>
+				</p>
+			</form>
+		</div>
+	</c:if>
 
-		</form>
-	</div>
+	<c:if test="${not empty sessionScope.user}">
+		<div id="sign-in-menu">
+			<div class="signin-header">
+				<div class="welcome-signed-in">
+					<h4>Welcome Back User!</h4>
+				</div>
+			</div>
+			<div class="welcome-points">
+				<span>Your Reward Points</span>
+				<h4 class="gigyaPointsBalanceHeader">0.00</h4>
+			</div>
+			<ul class="header-my-account">
+				<li><a href="#">Your Account</a></li>
+				<li><a href="#">Address Book</a></li>
+				<li><a href="#">Payment Info</a></li>
+				<li><a href="#">Order History</a></li>
+			</ul>
+
+			<div class="logout-user">
+				<p>
+					Logout? <a href="/user/logout">Log Out</a>
+				</p>
+			</div>
+		</div>
+	</c:if>
+
+
 </header>
 
 <!-- header area end-->

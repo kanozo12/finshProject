@@ -60,7 +60,7 @@ public class UserController {
 			model.addAttribute("msg", msg);
 			return "user/login.page";
 		}
-		
+		System.out.println(loginDTO);
 		UserVO user = service.login(loginDTO.getUserType(), loginDTO.getUserName(), loginDTO.getPassword());
 		
 		if (user == null) {
@@ -71,7 +71,7 @@ public class UserController {
 		session.setAttribute("user", user);
 		System.out.println(user);
 
-		return "redirect:/"; // 로그인 성공시 메인페이지로 리다이렉트\
+		return "redirect:/"; // 로그인 성공시 메인페이지로 리다이렉트
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)

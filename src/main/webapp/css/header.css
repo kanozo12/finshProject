@@ -124,7 +124,7 @@
 
 #sign-in-menu {
 	display: none;
-   	top: 51px;
+   	top: 70px;
     width: 288px;
     position: absolute;
     padding: 20px;
@@ -242,5 +242,76 @@
     margin-top: 20px;
     text-align: center;
 }
+
+
+.welcome-signed-in {
+    background: linear-gradient(180deg,#3da588 0,#61c2a6 100%);
+    color: white;
+    text-align: center;
+    padding: 1px 20px 10px;
+    margin: 0 -20px;
+    border-radius: 4px 4px 0 0;
+}
+
+.welcome-points {
+    box-shadow: 0 4px 10px -2px rgba(0,0,0,0.3);
+    text-align: center;
+    margin: -25px auto 14px;
+    background: white;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(0,0,0,0.5);
+    padding: 13px 10px;
+    width: 80%;
+    max-width: 200px;
+}
+
+.gigyaPointsBalanceHeader {
+    margin: 0;
+    display: block;
+    font-size: 30px;
+    letter-spacing: 0;
+    font-weight: 700;
+    color: black;
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+
+.header-my-account {
+    line-height: 38px;
+    font-size: 13px;
+    margin: 0 -20px;
+}
+
+.header-my-account li {
+    line-height: 38px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.header-my-account li:hover {
+    background: #eef2f6;
+}
+
+.header-my-account li a{
+    color: black;
+    padding-left: 30px;
+}
+
+.logout-user {
+    background: #f5f7f9;
+    padding: 14px 30px;
+    border-radius: 0 0 4px 4px;
+    margin: 10px -20px -20px;
+    font-size: 13px;
+    text-align: left;
+}
+
+.logout-user a {
+    text-decoration: underline;
+    font-weight: 500;
+} 
 
 /*join tab */

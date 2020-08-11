@@ -24,7 +24,7 @@ public class ProductController {
 	public String viewRegisterPage(Model model, HttpSession session) {
 
 		ArrayList<ProductVO> products = (ArrayList<ProductVO>) service.allproductRetrieve();
-		System.out.println(products);
+
 		model.addAttribute("user", session.getAttribute("user"));
 		model.addAttribute("products", products);
 
