@@ -1,6 +1,5 @@
 package net.kanozo.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +15,13 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDAO productDAO;
 
 	@Override
-	public List<ProductVO> allproductRetrieve() {
-		return productDAO.allproductRetrieve();
+	public List<ProductVO> productRetrieve(String productType) {
+		return productDAO.productRetrieve(productType);
 	}
 
 	@Override
-	public ArrayList<ProductVO> productRetrieve(String productname) {
-		return productDAO.productRetrieve(productname);
+	public ProductVO productGetDetail(Integer id) {
+		return productDAO.productGetDetail(id);
 	}
 
 //	@Override

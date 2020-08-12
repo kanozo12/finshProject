@@ -9,9 +9,9 @@
 			<a href="/"></a>
 		</div>
 		<div class="nav-list">
-			<li><a href="/prod/clubs">GOLF CLUBS</a></li>
-			<li><a href="product">ACCESSORIES</a></li>
-			<li><a href="product">WOMEN'S</a></li>
+			<li><a href="/prod/drivers">Drivers</a></li>
+			<li><a href="/prod/Fairway Woods">Fairway Woods</a></li>
+			<li><a href="/prod/iron">iron</a></li>
 			<li><a href="product">MEN'S</a></li>
 			<li><a href="product">OTHER BEANDS</a></li>
 			<li><a href="product">CLEARANCE</a></li>

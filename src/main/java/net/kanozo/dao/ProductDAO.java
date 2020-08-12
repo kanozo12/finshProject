@@ -9,11 +9,9 @@ import net.kanozo.domain.ProductVO;
 
 @Repository
 public interface ProductDAO {
-	public List<ProductVO> allproductRetrieve();
+	public List<ProductVO> productRetrieve(String productType);
 
-	public ArrayList<ProductVO> productRetrieve(String productname);
-
-//	public void productInsert(ProductVO productVO);
+	public ProductVO productGetDetail(Integer id);
 
 	public void productUpdate(int productid, String producttype, String productname, String explanation, int price,
 			int inventory);

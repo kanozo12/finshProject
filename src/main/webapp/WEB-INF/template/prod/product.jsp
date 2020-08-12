@@ -5,9 +5,7 @@
 <body>
 
 	<div class="container">
-
-		<h1 class="content-main-title" style="font-size: xx-large;">Fairway
-			Woods</h1>
+		<h1 class="content-main-title" style="font-size: xx-large;">${category}</h1>
 		<div class="content">
 			<div class="side-menu">
 				<h3>Category</h3>
@@ -61,8 +59,8 @@
 				<c:forEach items="${products}" var="products">
 					<div class="item-box">
 						<div class="item-img">
-							<a href="/prod/detail"> <img src="${products.productImgUrl}"
-								alt="${products.productName}" /></a>
+							<a href="/prod/detail/${products.productId}"> <img
+								src="${products.productImgUrl}" alt="${products.productName}" /></a>
 						</div>
 
 						<div class="item-name">${products.productName}</div>

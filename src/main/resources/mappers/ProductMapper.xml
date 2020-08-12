@@ -4,16 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="net.kanozo.mappers.ProductMapper">
-	<select id="allproductRetrieve" resultType="ProductVO">
-		SELECT * FROM product
-	</select>
-	
 	<select id="productRetrieve" resultType="ProductVO">
-		SELECT * FROM product WHERE productName like %#{productname}%"
+		SELECT * FROM product WHERE productType = #{productType}
 	</select>
 	
-	<select id="getProductId" resultType="Integer">
-		SELECT COUNT(productId) FROM product
+	<select id="productGetDetail" resultType="ProductVO">
+		select * from product WHERE productId = #{id}
 	</select>
 	
 	<insert id="productInsert">

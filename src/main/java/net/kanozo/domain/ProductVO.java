@@ -8,6 +8,15 @@ public class ProductVO {
 	private int price;
 	private int inventory;
 	private String productImgUrl;
+	private String productIntro;
+
+	public final String getProductIntro() {
+		return productIntro;
+	}
+
+	public final void setProductIntro(String productIntro) {
+		this.productIntro = productIntro;
+	}
 
 	public String getProductImgUrl() {
 		return productImgUrl;

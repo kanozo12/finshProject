@@ -1,6 +1,5 @@
 package net.kanozo.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -18,21 +17,14 @@ public class ProductDAOImpl implements ProductDAO {
 	private final String ns = "net.kanozo.mappers.ProductMapper";
 
 	@Override
-	public List<ProductVO> allproductRetrieve() {
-		return session.selectList(ns + ".allproductRetrieve");
+	public List<ProductVO> productRetrieve(String productType) {
+		return session.selectList(ns + ".productRetrieve", productType);
 	}
 
 	@Override
-	public ArrayList<ProductVO> productRetrieve(String productname) {
-		// TODO Auto-generated method stub
-		return null;
+	public ProductVO productGetDetail(Integer id) {
+		return session.selectOne(ns + ".productGetDetail", id);
 	}
-
-//	@Override
-//	public void productInsert(String producttype, String productname, String explanation, int price, int inventory) {
-//		// TODO Auto-generated method stub
-//
-//	}
 
 	@Override
 	public void productUpdate(int productid, String producttype, String productname, String explanation, int price,
