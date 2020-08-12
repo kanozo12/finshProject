@@ -76,6 +76,9 @@
 
 			<mapping path="/user/logout" />
 			<mapping path="/prod/take" />
+			<mapping path="/prod/basket" />
+			<mapping path="/prod/payment" />
+			<mapping path="/user/order/history" />	
 			<beans:ref bean="authInterceptor" />
 		</interceptor>
 	</interceptors>

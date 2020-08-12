@@ -9,9 +9,9 @@
 			<a href="/"></a>
 		</div>
 		<div class="nav-list">
-			<li><a href="/prod/drivers">Drivers</a></li>
-			<li><a href="/prod/Fairway Woods">Fairway Woods</a></li>
-			<li><a href="/prod/iron">iron</a></li>
+			<li><a href="/prod/clubs/drivers">Drivers</a></li>
+			<li><a href="/prod/clubs/Fairway Woods">Fairway Woods</a></li>
+			<li><a href="/prod/clubs/iron">iron</a></li>
 			<li><a href="product">MEN'S</a></li>
 			<li><a href="product">OTHER BEANDS</a></li>
 			<li><a href="product">CLEARANCE</a></li>
@@ -27,8 +27,9 @@
 			</div>
 
 			<div class="icon">
-				<a href="basket"><i class="fas fa-shopping-cart"></i></a>
+				<a href="/prod/basket"><i class="fas fa-shopping-cart"></i></a>
 			</div>
+			<div class="header-basket-count">1</div>
 		</div>
 	</div>
 
@@ -73,7 +74,7 @@
 				<li><a href="#">Your Account</a></li>
 				<li><a href="#">Address Book</a></li>
 				<li><a href="#">Payment Info</a></li>
-				<li><a href="#">Order History</a></li>
+				<li><a href="/user/order/history">Order History</a></li>
 			</ul>
 
 			<div class="logout-user">

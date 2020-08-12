@@ -1,12 +1,14 @@
 package net.kanozo.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import net.kanozo.domain.OrderHistoryVO;
 import net.kanozo.domain.UserVO;
 
 @Repository
@@ -54,14 +56,19 @@ public class UserDAOImpl implements UserDAO {
 	public Integer getRequireExp(Integer level) {
 		return session.selectOne(ns + ".requireExp", level);
 	}
-	
+
 	@Override
 	public void setLevelAndExp(UserVO user) {
 		session.update(ns + ".setLevelAndExp", user);
 	}
-	
+
 	@Override
 	public UserVO getCnt(String userid) {
 		return session.selectOne(ns + ".selectWriteCnt", userid);
+	}
+
+	@Override
+	public List<OrderHistoryVO> getOrderHistory(Integer userId) {
+		return session.selectList(ns + ".selectOrderHistory", userId);
 	}
 }

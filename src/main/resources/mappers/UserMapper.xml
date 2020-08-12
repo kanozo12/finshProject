@@ -54,4 +54,8 @@
 		WHERE 
 			A.USERID = B.WRITER AND USERID = #{userid}
 	</select>
+	
+	<select id="selectOrderHistory" resultType="OrderHistoryVO">
+		select a.productType, a.productName, a.price from pay As b, product as a where a.productId = b.productId and userId = #{userId}
+	</select>
 </mapper>

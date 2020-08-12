@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 
 import net.kanozo.dao.ProductDAO;
 import net.kanozo.domain.BasketVO;
+import net.kanozo.domain.OrderHistoryVO;
+import net.kanozo.domain.PaymentInfoVO;
+import net.kanozo.domain.PaymentVO;
 import net.kanozo.domain.ProductVO;
+import net.kanozo.domain.UserBasketVO;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -30,11 +34,26 @@ public class ProductServiceImpl implements ProductService {
 		productDAO.addBasket(vo);
 	}
 
-//	@Override
-//	public Object productInsert(ProductVO productVO) {
-//		return productDAO.productInsert(productVO);
-//
-//	}
+	@Override
+	public void cleanBasket(Integer userId) {
+		productDAO.cleanBasket(userId);
+	}
+
+	@Override
+	public List<UserBasketVO> getBasket(Integer userId) {
+		return productDAO.getBasket(userId);
+	}
+
+	@Override
+	public List<PaymentInfoVO> getPaymentInfo(Integer userId) {
+		return productDAO.getPaymentInfo(userId);
+	}
+
+	@Override
+	public void addPayment(PaymentVO vo) {
+		productDAO.addPayment(vo);
+
+	}
 
 	@Override
 	public void productUpdate(int productid, String producttype, String productname, String explanation, int price,
@@ -42,5 +61,7 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 
 	}
+
+	
 
 }

@@ -5,19 +5,46 @@
 
 <mapper namespace="net.kanozo.mappers.ProductMapper">
 	<select id="productRetrieve" resultType="ProductVO">
-		SELECT * FROM product WHERE productType = #{productType}
+		SELECT * FROM product
+		WHERE productType = #{productType}
 	</select>
-	
+
 	<select id="productGetDetail" resultType="ProductVO">
-		select * from product WHERE productId = #{id}
+		select * from product
+		WHERE productId = #{id}
 	</select>
-	
+
 	<insert id="addBasket">
-		INSERT INTO basket(userId, productId, numbers, validity) values(#{userId}, #{productId}, #{numbers}, 1)
+		INSERT INTO basket(userId, productId, numbers,
+		validity) values(#{userId}, #{productId}, #{numbers}, 1)
 	</insert>
-	
-	<update id="productUpdate">
-		UPDATE product SET productType = #{producttype} productName = #{productname} explanation = #{explanation} price = #{price} inventory = #{inventory} WHERE productId = #{productid}
+
+	<select id="selectBasket" resultType="UserBasketVO">
+		SELECT b.numbers,
+		productName, p.productImgUrl, p.price, p.productId FROM product AS p,
+		basket AS b WHERE userId = #{userId} AND validity = 1 AND b.productId
+		= p.productId
+	</select>
+
+	<select id="selectPaymentInfo" resultType="PaymentInfoVO">
+		SELECT b.numbers,
+		p.productId FROM product AS p, basket AS b WHERE userId = #{userId}
+		AND validity = 1 AND b.productId = p.productId
+	</select>
+
+	<insert id="addPayment">
+		INSERT INTO pay(userId, productId, numbers, address,
+		contact, creditcardnumber, creditcardpassword) values(#{userId},
+		#{productId}, #{numbers}, #{address}, #{contact}, #{creditcardnumber},
+		#{creditcardpassword})
+	</insert>
+
+	<update id="cleanBasket">
+		UPDATE basket SET validity = 2 WHERE userId =
+		#{userId}
 	</update>
+
+
+
 </mapper>
  

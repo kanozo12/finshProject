@@ -120,6 +120,21 @@
 	width: 570px;
 }
 
+.header-basket-count {
+	padding: 13px 10px;
+    min-width: 16px;
+    height: 8px;
+    background: #61c2a6;
+    color: white;
+    font-size: 13px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* join tab */
 
 #sign-in-menu {

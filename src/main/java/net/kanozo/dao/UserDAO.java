@@ -1,5 +1,8 @@
 package net.kanozo.dao;
 
+import java.util.List;
+
+import net.kanozo.domain.OrderHistoryVO;
 import net.kanozo.domain.UserVO;
 
 public interface UserDAO {
@@ -20,6 +23,8 @@ public interface UserDAO {
 
 	// 레벨과 경험치 셋팅하기
 	public void setLevelAndExp(UserVO user);
-	
+
 	public UserVO getCnt(String userid);
+
+	public List<OrderHistoryVO> getOrderHistory(Integer userId);
 }

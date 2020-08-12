@@ -1,0 +1,41 @@
+.history {
+	min-height: 600px;
+	display: flex;
+}
+
+.left {
+	flex: 2;
+}
+
+.page-title {
+	margin: 6rem 0 4rem;
+}
+
+.my-account {
+	font-size: 16px;
+	margin-top: 28px;
+	margin-bottom: 15px;
+}
+
+.my-account>h4 {
+	margin: 10px 0 10px 0;
+}
+
+.my-account>ul li a {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+}
+
+.my-account>ul li a:hover {
+	text-decoration: none;
+	background-color: #eee;
+}
+
+.right {
+	flex: 3;
+}
+
+.right h3 {
+	margin: 7rem 0 4rem;
+}

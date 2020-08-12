@@ -1,9 +1,12 @@
 package net.kanozo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.kanozo.dao.UserDAO;
+import net.kanozo.domain.OrderHistoryVO;
 import net.kanozo.domain.UserVO;
 
 @Service
@@ -39,13 +42,18 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserVO appExp(String userid, Integer exp) {
-		
+
 		return null;
 	}
 
 	@Override
 	public UserVO getCnt(String userid) {
 		return userDao.getCnt(userid);
+	}
+
+	@Override
+	public List<OrderHistoryVO> getOrderHistory(Integer userId) {
+		return userDao.getOrderHistory(userId);
 	}
 
 }
