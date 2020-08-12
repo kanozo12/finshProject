@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+.product-content {
+    width: 100%;
+    height: 100%;
+    margin: 4rem -15px 8rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-img-container {
+    width: 456px;
+    height: 427px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.product-img-container .product-img {
+    width: 427px;
+    height: 427px;
+    background-color: #fff;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0 0 0;
+    background: #fff;
+}
+
+.product-head {
+    display: flex;
+    justify-items: flex-end;
+    flex-direction: column;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.price-rating {
+    margin: 15px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-price-range {
+    font-size: 1.5rem;
+    color: #a0a0a0;
+}
+
+.grade {
+    margin-left: 1rem;
+}
+
+.product-promotion{
+	font-size: 0.85rem;
+}
+
+.product-promotion a {
+    font-weight: bold;
+}
+
+.why-buy-container {
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    padding: 14px 0px;
+    margin: 25px 0px;
+    display: table;
+    width: 100%;
+}
+
+.why-buy-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.3px;
+}
+
+.why-buy-icons {
+    width: auto;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.wb-divider {
+    display: table-cell;
+    height: 20px;
+    width: 1px;
+    background: #cdcdcd;
+}
+
+.product-intro {
+    font-size: 0.85rem;
+}
+
+.promotion-btn {
+    padding:10px; 
+    font-size:12px; 
+    color:#2979ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #cdcdcd;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.product-buy-btn {
+    background-color: #2273dd;
+    color: #fff;
+    border-radius: 4px;
+    background: linear-gradient(90deg,#698dfc 0,#2273dd 100%);
+    font-size: 15px;
+    font-weight: 800;
+    border: 0;
+    position: relative;
+    z-index: 1;
+    height: 3rem;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -2,12 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link rel="stylesheet" href="/css/product.css">
-
 <body>
 
 	<div class="container">
-	
+
 		<h1 class="content-main-title" style="font-size: xx-large;">Fairway
 			Woods</h1>
 		<div class="content">
@@ -63,8 +61,8 @@
 				<c:forEach items="${products}" var="products">
 					<div class="item-box">
 						<div class="item-img">
-							<img src="${products.productImgUrl}"
-								alt="${products.productName}" />
+							<a href="/prod/detail"> <img src="${products.productImgUrl}"
+								alt="${products.productName}" /></a>
 						</div>
 
 						<div class="item-name">${products.productName}</div>

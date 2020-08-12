@@ -31,4 +31,10 @@ public class ProductController {
 		return "prod/product.page";
 	}
 
+	@RequestMapping(value = "detail", method = RequestMethod.GET)
+	public String productDetailPage(Model model, HttpSession session) {
+
+		return "prod/productDetail.page";
+	}
+
 }
