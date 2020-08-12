@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.kanozo.dao.ProductDAO;
+import net.kanozo.domain.BasketVO;
 import net.kanozo.domain.ProductVO;
 
 @Service
@@ -22,6 +23,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public ProductVO productGetDetail(Integer id) {
 		return productDAO.productGetDetail(id);
+	}
+
+	@Override
+	public void addBasket(BasketVO vo) {
+		productDAO.addBasket(vo);
 	}
 
 //	@Override

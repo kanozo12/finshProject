@@ -19,7 +19,7 @@ public class AuthInterceptor implements HandlerInterceptor{
 			session.setAttribute("msg", "권한이 없습니다 로그인해주세요");
 		}
 		
-		response.sendRedirect("/user/login");
+		response.sendRedirect("/");
 		return false;
 	}
 }

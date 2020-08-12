@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import net.kanozo.domain.BasketVO;
 import net.kanozo.domain.ProductVO;
 
 @Repository
@@ -24,6 +25,11 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public ProductVO productGetDetail(Integer id) {
 		return session.selectOne(ns + ".productGetDetail", id);
+	}
+
+	@Override
+	public void addBasket(BasketVO vo) {
+		session.insert(ns + ".addBasket", vo);
 	}
 
 	@Override

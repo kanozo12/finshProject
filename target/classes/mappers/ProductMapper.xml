@@ -12,8 +12,8 @@
 		select * from product WHERE productId = #{id}
 	</select>
 	
-	<insert id="productInsert">
-		INSERT INTO shoppingproduct VALUES(#{Id}, #{producttype}, #{productname}, #{explanation}, #{price}, #{price})
+	<insert id="addBasket">
+		INSERT INTO basket(userId, productId, numbers, validity) values(#{userId}, #{productId}, #{numbers}, 1)
 	</insert>
 	
 	<update id="productUpdate">

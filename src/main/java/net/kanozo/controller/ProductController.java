@@ -12,13 +12,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import net.kanozo.domain.BasketVO;
 import net.kanozo.domain.ProductVO;
 import net.kanozo.service.ProductService;
 
 @Controller
 @RequestMapping("/prod/")
 public class ProductController {
-
+	
+	private String this_page;
+	
 	@Autowired
 	private ProductService service;
 
@@ -30,10 +33,10 @@ public class ProductController {
 			vo = products.get(i);
 		}
 		
-		System.out.println(vo.getProductType());
+		this_page = productType;
 		
 		model.addAttribute("category", vo.getProductType());
-		
+
 		model.addAttribute("user", session.getAttribute("user"));
 		model.addAttribute("products", products);
 
@@ -48,6 +51,14 @@ public class ProductController {
 		model.addAttribute("products", products);
 
 		return "prod/productDetail.page";
+	}
+
+	@RequestMapping(value = "take", method = RequestMethod.POST)
+	public String addBasket(Model model, BasketVO basket) {
+		
+		service.addBasket(basket);
+		
+		return "redirect:/prod/" + this_page;
 	}
 
 }
