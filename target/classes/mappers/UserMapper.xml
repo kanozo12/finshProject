@@ -5,8 +5,7 @@
 
 <mapper namespace="net.kanozo.mappers.UserMapper">
 	<insert id="insertUser">
-		INSERT 
-			INTO SPRING_USERS (USERID, NAME, PASSWORD, U_EXP, U_LEVEL, IMG) VALUES ( #{userid}, #{name}, #{password}, 0, 1, #{img})
+		insert into shop_users (userType, userName, password, BirthDate, Email, Address) VALUES (#{userType}, #{userName}, #{password}, #{BirthDate}, #{Email}, #{Address})
 	</insert>
 	
 	<select id="selectUser" resultType="UserVO">

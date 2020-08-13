@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import net.kanozo.domain.BasketVO;
-import net.kanozo.domain.OrderHistoryVO;
 import net.kanozo.domain.PaymentInfoVO;
 import net.kanozo.domain.PaymentVO;
 import net.kanozo.domain.ProductVO;
@@ -19,6 +18,8 @@ public interface ProductDAO {
 
 	public void addBasket(BasketVO vo);
 
+	public int checkBasket(Integer userId);
+	
 	public void cleanBasket(Integer userId);
 	
 	public List<UserBasketVO> getBasket(Integer userId);

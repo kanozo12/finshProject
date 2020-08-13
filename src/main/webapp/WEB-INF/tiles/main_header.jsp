@@ -26,10 +26,25 @@
 				<a href="#"><i class="far fa-user"></i></a>
 			</div>
 
+
 			<div class="icon">
 				<a href="/prod/basket"><i class="fas fa-shopping-cart"></i></a>
 			</div>
-			<div class="header-basket-count">1</div>
+			<c:if test="${not empty sessionScope.user}">
+				<c:if test="${sessionScope.basketCount <= 0}">
+
+				</c:if>
+
+				<c:if test="${sessionScope.basketCount >= 0}">
+					<div class="header-basket-count">${sessionScope.basketCount}</div>
+				</c:if>
+			</c:if>
+
+			<c:if test="${empty sessionScope.user}">
+				<c:if test="${sessionScope.basketCount == 0}">
+
+				</c:if>
+			</c:if>
 		</div>
 	</div>
 

@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import net.kanozo.domain.LoginDTO;
 import net.kanozo.domain.OrderHistoryVO;
-import net.kanozo.domain.RegisterDTO;
+import net.kanozo.domain.RegisterVO;
 import net.kanozo.domain.UserVO;
 import net.kanozo.service.ProductService;
 import net.kanozo.service.UserService;
-import net.kanozo.validator.RegisterValidator;
 
 @Controller
 @RequestMapping("/user/")
@@ -33,18 +32,18 @@ public class UserController {
 	@Autowired
 	private ProductService pService;
 
-	private RegisterValidator validator = new RegisterValidator();
-
 	@RequestMapping(value = "register", method = RequestMethod.GET)
 	public String viewRegisterPage(Model model) {
-		model.addAttribute("registerDTO", new RegisterDTO());
+
 		return "user/registerPage.page";
 	}
 
 	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public String userRegist(RegisterDTO dto, Errors errors) throws Exception {
+	public String postRegisterPage(Model model, RegisterVO vo) {
 
-		return "redirect:/"; // 회원가입완료후 메인 페이지로 이동
+		service.insertUser(vo);
+
+		return "redirect:/";
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.POST)
@@ -64,6 +63,9 @@ public class UserController {
 		}
 
 		session.setAttribute("user", user);
+		int basketCount = pService.checkBasket(user.getUserId());
+		System.out.println(basketCount);
+		session.setAttribute("basketCount", basketCount);
 		System.out.println(user);
 
 		return "redirect:/"; // 로그인 성공시 메인페이지로 리다이렉트
@@ -84,4 +86,5 @@ public class UserController {
 		model.addAttribute("list", list);
 		return "user/history.page";
 	}
+
 }

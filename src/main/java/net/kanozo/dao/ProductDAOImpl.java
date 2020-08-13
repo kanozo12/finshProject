@@ -37,6 +37,11 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 	@Override
+	public int checkBasket(Integer userId) {
+		return session.selectOne(ns + ".checkBasket", userId);
+	}
+
+	@Override
 	public void cleanBasket(Integer userId) {
 		session.update(ns + ".cleanBasket", userId);
 
@@ -57,8 +62,6 @@ public class ProductDAOImpl implements ProductDAO {
 		session.insert(ns + ".addPayment", vo);
 
 	}
-
-
 
 	@Override
 	public void productUpdate(int productid, String producttype, String productname, String explanation, int price,

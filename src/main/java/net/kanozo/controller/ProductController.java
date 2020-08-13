@@ -1,6 +1,5 @@
 package net.kanozo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -25,8 +24,6 @@ import net.kanozo.service.ProductService;
 @RequestMapping("/prod/")
 public class ProductController {
 
-	private String this_page;
-
 	@Autowired
 	private ProductService service;
 
@@ -37,8 +34,6 @@ public class ProductController {
 		for (int i = 0; i < products.size(); i++) {
 			vo = products.get(i);
 		}
-
-		this_page = productType;
 
 		model.addAttribute("category", vo.getProductType());
 
@@ -92,7 +87,8 @@ public class ProductController {
 	}
 
 	@RequestMapping(value = "take", method = RequestMethod.POST)
-	public String addBasket(Model model, BasketVO basket) {
+	public String addBasket(Model model, BasketVO basket, HttpSession session) {
+		UserVO user = (UserVO) session.getAttribute("user");
 
 		service.addBasket(basket);
 
@@ -148,9 +144,10 @@ public class ProductController {
 		}
 
 		service.cleanBasket(user.getUserId());
+		int basketCount = service.checkBasket(user.getUserId());
+		System.out.println(basketCount);
+		session.setAttribute("basketCount", basketCount);
 		return "redirect:/";
 	}
-	
-	
 
 }

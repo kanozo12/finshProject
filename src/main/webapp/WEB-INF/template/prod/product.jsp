@@ -66,7 +66,7 @@
 						<div class="item-name">${products.productName}</div>
 
 						<div class="product-pricing">
-							<p class="p-price">From $ ${products.price }</p>
+							<p class="p-price">From $${products.price }</p>
 							<p class="p-promotion">
 								As low as $12 APR with Affirm <a href="#">Prequalify now</a>
 							</p>

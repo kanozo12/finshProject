@@ -43,7 +43,10 @@
 		UPDATE basket SET validity = 2 WHERE userId =
 		#{userId}
 	</update>
-
+	
+	<select id="checkBasket" resultType="Integer">
+		SELECT count(basketId) FROM basket as a, shop_users as b WHERE a.userId = b.userId and a.userId = #{userId} and a.validity = '1'
+	</select>
 
 
 </mapper>

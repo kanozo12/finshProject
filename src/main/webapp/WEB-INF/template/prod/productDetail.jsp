@@ -23,11 +23,11 @@
 					<div class="category-breadcrumbs">
 						<a href="/prod/${products.productType}" style="color: #a0a0a0;">${products.productType}/</a>
 					</div>
-					<h1 class="page-title">${products.productName}</h1>
+					<h1>${products.productName}</h1>
 
 					<div class="price-rating">
 						<div class="product-price-range">
-							<p class="product-price">$ ${products.price}</p>
+							<p class="product-price">$${products.price}</p>
 						</div>
 						<div class="grade">
 							<div class="star-point">
@@ -78,7 +78,7 @@
 						<i style="padding-right: 5px;" class="fas fa-tag"></i>
 						<p>30% OFF!</p>
 					</div>
-					<input type="submit" class="product-buy-btn" value="select & buy">
+					<input type="submit" class="product-buy-btn" value="select & buy" style="width: 100%;">
 				</div>
 			</div>
 		</form>

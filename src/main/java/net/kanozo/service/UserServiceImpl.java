@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import net.kanozo.dao.UserDAO;
 import net.kanozo.domain.OrderHistoryVO;
+import net.kanozo.domain.RegisterVO;
 import net.kanozo.domain.UserVO;
 
 @Service
@@ -23,11 +24,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserVO login(String userType, String userid, String password) {
 		return userDao.loginUser(userType, userid, password);
-	}
-
-	@Override
-	public void register(UserVO user) {
-		userDao.insertUser(user);
 	}
 
 	@Override
@@ -54,6 +50,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public List<OrderHistoryVO> getOrderHistory(Integer userId) {
 		return userDao.getOrderHistory(userId);
+	}
+
+	@Override
+	public void insertUser(RegisterVO vo) {
+		userDao.insertUser(vo);
 	}
 
 }

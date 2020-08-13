@@ -16,6 +16,8 @@ public interface ProductService {
 
 	public void addBasket(BasketVO vo);
 
+	public int checkBasket(Integer userId);
+	
 	public void cleanBasket(Integer userId);
 
 	public List<UserBasketVO> getBasket(Integer userId);

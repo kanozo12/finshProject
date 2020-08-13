@@ -3,6 +3,7 @@ package net.kanozo.dao;
 import java.util.List;
 
 import net.kanozo.domain.OrderHistoryVO;
+import net.kanozo.domain.RegisterVO;
 import net.kanozo.domain.UserVO;
 
 public interface UserDAO {
@@ -10,7 +11,7 @@ public interface UserDAO {
 
 	public UserVO loginUser(String userType, String userid, String password);
 
-	public void insertUser(UserVO user);
+	public void insertUser(RegisterVO vo);
 
 	// 레벨업 테이블 클리어
 	public void deleteLevelTable();

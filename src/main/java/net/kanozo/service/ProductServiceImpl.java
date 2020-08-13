@@ -35,6 +35,12 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+	public int checkBasket(Integer userId) {
+		return productDAO.checkBasket(userId);
+
+	}
+
+	@Override
 	public void cleanBasket(Integer userId) {
 		productDAO.cleanBasket(userId);
 	}
@@ -61,7 +67,5 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 
 	}
-
-	
 
 }

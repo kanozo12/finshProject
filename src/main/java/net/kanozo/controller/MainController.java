@@ -12,7 +12,7 @@ public class MainController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String indexPage(Model model, HttpServletRequest req) {
-
+		
 		return "main.page";
 
 	}

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import net.kanozo.domain.OrderHistoryVO;
+import net.kanozo.domain.RegisterVO;
 import net.kanozo.domain.UserVO;
 
 @Repository
@@ -34,8 +35,8 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void insertUser(UserVO user) {
-		session.insert(ns + ".insertUser", user);
+	public void insertUser(RegisterVO vo) {
+		session.insert(ns + ".insertUser", vo);
 	}
 
 	@Override
@@ -71,4 +72,5 @@ public class UserDAOImpl implements UserDAO {
 	public List<OrderHistoryVO> getOrderHistory(Integer userId) {
 		return session.selectList(ns + ".selectOrderHistory", userId);
 	}
+
 }
