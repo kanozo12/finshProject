@@ -1,7 +1,9 @@
 # Golf Concept ShoppingMall
 ## Used Language 
 > SpringFramework + MySql + Mybatis
-
+> LayoutTemplate : tiles
+> security : lucy-xss-servlet-filter
+> Used Js Libery : Owl Carousel.js, highlight.js jquery.js  
 ----------
 
 ## 개발 노트
