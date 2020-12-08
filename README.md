@@ -3,7 +3,8 @@
 > SpringFramework + MySql + Mybatis
 
 
-# 개발 노트
+## 개발 노트
+----------
 ## 수정사항
 > #### 1. 로그인 실패 시 오류 (Exception 처리 추가)
 > #### 2. 로그인 상태 Alert 추가
