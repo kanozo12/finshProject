@@ -18,3 +18,9 @@
 > #### 3. 장바구니 물건 추가시 nav 메뉴 장바구니 아이콘 증가
 > #### 4. 물건 구매시 %에 따라 Reword 적립 기능
 > #### 5. 관리자 페이지, 판매 유저 페이지 추가
+
+![1](https://user-images.githubusercontent.com/41713160/101589077-14afc380-3a2b-11eb-86a5-2e5f378bb18e.png)
+![2](https://user-images.githubusercontent.com/41713160/101589082-17aab400-3a2b-11eb-8734-18c9b35c2e21.png)
+![3](https://user-images.githubusercontent.com/41713160/101589083-18434a80-3a2b-11eb-8d79-a95c7cbfe232.png)
+![4](https://user-images.githubusercontent.com/41713160/101589085-18434a80-3a2b-11eb-9da5-fb88d28c9adc.png)
+![5](https://user-images.githubusercontent.com/41713160/101589088-18dbe100-3a2b-11eb-9253-53de2d3f6ee2.png)
