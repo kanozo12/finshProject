@@ -22,6 +22,6 @@
 ##Screenshots
 ------
 ## MainPage
-<img width="400" src="https://user-images.githubusercontent.com/41713160/101589077-14afc380-3a2b-11eb-86a5-2e5f378bb18e.png)">
+<img src="https://user-images.githubusercontent.com/41713160/101589077-14afc380-3a2b-11eb-86a5-2e5f378bb18e.png" width="400">
 
 
