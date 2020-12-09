@@ -21,10 +21,7 @@
 
 Screenshots
 ------
+## MainPage
+![1](https://user-images.githubusercontent.com/41713160/101589077-14afc380-3a2b-11eb-86a5-2e5f378bb18e.png)
 
 
-<div style="display:flex">
-  <img width="200" src="https://user-images.githubusercontent.com/41713160/101589077-14afc380-3a2b-11eb-86a5-2e5f378bb18e.png">
-  <img width="200" src="https://user-images.githubusercontent.com/41713160/101589082-17aab400-3a2b-11eb-8734-18c9b35c2e21.png">
-  <img width="200" src="https://user-images.githubusercontent.com/41713160/101589083-18434a80-3a2b-11eb-8d79-a95c7cbfe232.png">
-</div>
