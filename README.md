@@ -18,8 +18,8 @@
 > #### 3. 장바구니 물건 추가시 nav 메뉴 장바구니 아이콘 증가
 > #### 4. 물건 구매시 %에 따라 Reword 적립 기능
 > #### 5. 관리자 페이지, 판매 유저 페이지 추가
-
-Screenshots
+<br>
+##Screenshots
 ------
 ## MainPage
 ![1](https://user-images.githubusercontent.com/41713160/101589077-14afc380-3a2b-11eb-86a5-2e5f378bb18e.png)
