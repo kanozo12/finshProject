@@ -19,11 +19,4 @@
 > #### 4. 물건 구매시 %에 따라 Reword 적립 기능
 > #### 5. 관리자 페이지, 판매 유저 페이지 추가   
 
-##Screenshots
-------
-## MainPage
-<div>
-  <img src="https://user-images.githubusercontent.com/41713160/101589077-14afc380-3a2b-11eb-86a5-2e5f378bb18e.png" width="400">
-  <img src="https://user-images.githubusercontent.com/41713160/101589082-17aab400-3a2b-11eb-8734-18c9b35c2e21.png" width="400">
-</div>
 
